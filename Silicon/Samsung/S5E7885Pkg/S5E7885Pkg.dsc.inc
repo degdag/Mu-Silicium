@@ -44,6 +44,18 @@
   gArmTokenSpaceGuid.PcdGicInterruptInterfaceBase|0x12302000
 
   #
+  # GPIO
+  # List Contents: 0x11CB0000, 0x13430000, 0x139B0000, 0x148F0000
+  #
+  gSamsungPkgTokenSpaceGuid.PcdGpioCtrlAddr|{ 0x00, 0x00, 0xCB, 0x11, 0x00, 0x00, 0x43, 0x13, 0x00, 0x00, 0x9B, 0x13, 0x00, 0x00, 0x8F, 0x14 }
+
+  #
+  # SPEEDY
+  # List Contents: 0x11CE0000
+  #
+  gSamsungPkgTokenSpaceGuid.PcdSpeedyBusAddr|{ 0x00, 0x00, 0xCE, 0x11 }
+
+  #
   # SMBIOS
   #
   gSiliciumPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Exynos (TM) 7885 @ 2.20 GHz"
@@ -58,5 +70,4 @@
   #
   # IO Libraries
   #
-  GpioLib|S5E7885Pkg/Library/GpioLib/GpioLib.inf
-  SpeedyLib|S5E7885Pkg/Library/SpeedyLib/SpeedyLib.inf
+  GpioBankLib|S5E7885Pkg/Library/GpioBankLib/GpioBankLib.inf

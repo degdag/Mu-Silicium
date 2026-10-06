@@ -27,8 +27,7 @@
   #
   # IO Libraries
   #
-  GpioLib|SamsungNullPkg/Library/GpioNullLib/GpioNullLib.inf
-  SpeedyLib|SamsungNullPkg/Library/SpeedyNullLib/SpeedyNullLib.inf
+  GpioBankLib|SamsungNullPkg/Library/GpioBankNullLib/GpioBankNullLib.inf
   HsI2cLib|SamsungNullPkg/Library/HsI2cNullLib/HsI2cNullLib.inf
 
   #
@@ -92,3 +91,8 @@
   #
   SamsungPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
   SamsungPkg/Drivers/UsiDxe/UsiDxe.inf
+
+  #
+  # Custom Drivers
+  #
+  SamsungPkg/Drivers/HypLoaderDxe/HypLoaderDxe.inf

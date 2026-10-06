@@ -49,6 +49,23 @@
   gSiliciumPkgTokenSpaceGuid.PcdTimerFreqOverwrite|26000000
 
   #
+  # GPIO
+  # List Contents: 0x10430000, 0x10830000, 0x11050000, 0x11430000, 0x13880000, 0x13A80000, 0x14050000, 0x14220000, 0x17C60000
+  #
+  gSamsungPkgTokenSpaceGuid.PcdGpioCtrlAddr|{ 0x00, 0x00, 0x43, 0x10, 0x00, 0x00, 0x83, 0x10, 0x00, 0x00, 0x05, 0x11, 0x00, 0x00, 0x43, 0x11, 0x00, 0x00, 0x88, 0x13, 0x00, 0x00, 0xA8, 0x13, 0x00, 0x00, 0x05, 0x14, 0x00, 0x00, 0x22, 0x14, 0x00, 0x00, 0xC6, 0x17 }
+
+  #
+  # SPEEDY
+  # List Contents: 0x141C0000
+  #
+  gSamsungPkgTokenSpaceGuid.PcdSpeedyBusAddr|{ 0x00, 0x00, 0x1C, 0x14 }
+
+  #
+  # Hypervisor
+  #
+  gSamsungPkgTokenSpaceGuid.PcdVmmStackOffset|0x2000
+
+  #
   # RAM Manager
   #
   gSamsungPkgTokenSpaceGuid.PcdHasSecurePgtbl|TRUE
@@ -66,16 +83,9 @@
   PlatformSecLib|S5E9810Pkg/Library/PlatformSecLib/PlatformSecLib.inf
 
   #
-  # UEFI Libraries
-  #
-  HwResetSystemLib|S5E9810Pkg/Library/ResetSystemLib/ResetSystemLib.inf
-  ResetSystemLib|S5E9810Pkg/Library/ResetSystemLib/ResetSystemLib.inf
-
-  #
   # IO Libraries
   #
-  GpioLib|S5E9810Pkg/Library/GpioLib/GpioLib.inf
-  SpeedyLib|S5E9810Pkg/Library/SpeedyLib/SpeedyLib.inf
+  GpioBankLib|S5E9810Pkg/Library/GpioBankLib/GpioBankLib.inf
 
   #
   # Power Management Libraries
