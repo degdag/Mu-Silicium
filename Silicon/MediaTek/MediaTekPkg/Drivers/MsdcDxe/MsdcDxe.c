@@ -105,13 +105,9 @@ MsdcGetNextSlot (
   EFI_SD_MMC_PASS_THRU_PROTOCOL *This,
   UINT8 *Slot)
 {
-  MSDC_PRIVATE_DATA *Private;
-
   if (This == NULL || Slot == NULL) {
     return EFI_INVALID_PARAMETER;
   }
-
-  Private = MSDC_PRIVATE_FROM_THIS (This);
 
   if (*Slot == 0xFF) {
     *Slot = 0;
@@ -164,13 +160,9 @@ MsdcGetSlotNumber (
   EFI_DEVICE_PATH_PROTOCOL *DevicePath,
   UINT8 *Slot)
 {
-  MSDC_PRIVATE_DATA *Private;
-
   if ((This == NULL) || (DevicePath == NULL) || (Slot == NULL)) {
     return EFI_INVALID_PARAMETER;
   }
-
-  Private = MSDC_PRIVATE_FROM_THIS (This);
 
   if ((DevicePath->Type != MESSAGING_DEVICE_PATH) ||
       ((DevicePath->SubType != MSG_SD_DP) &&
@@ -1377,6 +1369,10 @@ InitMsdc (
   CARD_DETECT_ROUTINE *Routine;
   EFI_MEMORY_REGION_DESCRIPTOR Region;
   CHAR8 MsdcName[11];
+
+  if (gPlatformInfo.NumberOfHosts == 0) {
+    return EFI_UNSUPPORTED;
+  }
 
   for (UINTN i = 0; i < gPlatformInfo.NumberOfHosts; i++) {
     Private = AllocateCopyPool (sizeof(MSDC_PRIVATE_DATA), &gMSDCPrivateDataTemplate);
